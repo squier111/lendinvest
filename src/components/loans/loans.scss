@@ -1,0 +1,40 @@
+.loans {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .loans-item {
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    text-align: left;
+    flex: 1 1 auto;
+    width: 100%;
+    padding: 20px 75px 20px 20px;
+    position: relative;
+    margin: 0 0 20px;
+    border-radius: 5px;
+
+    .invested {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #709624;
+    }
+
+    button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      border: none;
+      text-transform: uppercase;
+      background-color: yellow;
+      max-width: 200px;
+      min-height: 30px;
+
+    }
+    & > span {
+      display: block;
+      margin: 0 0 5px;
+    }
+  }
+}
