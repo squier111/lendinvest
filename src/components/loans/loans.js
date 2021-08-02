@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import Context from '../../store/Context';
 import { actions } from '../../store/reducers';
 import data from '../../mock-data/data.json';
-import { Button } from '@material-ui/core';
+import { Button, Card, CardContent } from '@material-ui/core';
 import './loans.scss';
 
 const Loans = () => {
@@ -25,10 +25,10 @@ const Loans = () => {
   };
 
   return (
-    <div className="loans">
+    <Card className="loans">
       {loans.length &&
         loans.map((item) => (
-          <div className="loans-item" key={item.id}>
+          <CardContent className="loans-item" key={item.id}>
             {item.invested ? <span className="invested">Invested</span> : null}
             <h4 className="title">{item.title}</h4>
             {/* <span className="amount">Amount avaliable &#163;{item.amount}</span> */}
@@ -40,9 +40,9 @@ const Loans = () => {
             >
               invest
             </Button>
-          </div>
+          </CardContent>
         ))}
-    </div>
+    </Card>
   );
 };
 

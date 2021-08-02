@@ -1,12 +1,8 @@
-// module.exports = {
-//   preset: 'ts-jest/presets/js-with-babel',
-//   moduleNameMapper: {
-//     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$': './jest.mock.js',
-//   },
-//   setupFilesAfterEnv: ['<rootDir>/jest.setup.js'],
-//   testPathIgnorePatterns: ['<rootDir>/node_modules/', '<rootDir>/assets/'],
-//   transform: {
-//     '^.+\\.jsx?$': 'babel-jest',
-//     '\\.(css|less|scss|sass)$': 'jest-transform-css',
-//   },
-// };
+module.exports = {
+  setupFiles: ['<rootDir>/jest.setup.js'],
+  moduleNameMapper: {
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
+    '\\.(scss|sass|css)$': 'identity-obj-proxy',
+  },
+};

@@ -1,13 +1,13 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import App from './App';
-import { StoreProvider } from './store/root.store';
+import TotalAmount from './total-amount';
+import { StoreProvider } from '../../store/root.store';
 
-describe('App', () => {
+describe('Modal', () => {
   it('renders', () => {
     const wrapper = mount(
       <StoreProvider>
-        <App />
+        <TotalAmount />
       </StoreProvider>,
     );
     expect(wrapper).toBeDefined();

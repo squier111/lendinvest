@@ -5,18 +5,12 @@ import { actions } from '../../store/reducers';
 import numberWithCommas from '../../utils/numberWithCommas';
 import { TextField, Button } from '@material-ui/core';
 import './modal.scss';
-import { useEffect } from 'react';
 
 const Modal = () => {
   const { store, dispatch } = useContext(Context);
   const { open, loansItem } = store;
 
   const [item, setItem] = useState('');
-  const [loansItemAmount, setLoansItemAmount] = useState('');
-
-  useEffect(() => {
-    setLoansItemAmount(loansItem?.amount);
-  }, [loansItem?.amount]);
 
   const setOpen = () => {
     dispatch({
@@ -42,9 +36,6 @@ const Modal = () => {
   };
 
   const onChangeHandler = (e) => {
-    const modifyNumber = Number.isInteger(loansItemAmount)
-      ? loansItemAmount
-      : parseFloat(loansItemAmount.replace(',', ''));
     if (
       Number(e.target.value) > parseFloat(loansItem?.amount.replace(',', ''))
     ) {
@@ -53,7 +44,6 @@ const Modal = () => {
     } else {
       setItem(e.target.value);
     }
-    setLoansItemAmount(() => modifyNumber - Number(e.target.value));
   };
 
   if (!open) {
@@ -117,7 +107,8 @@ const Modal = () => {
     );
   };
 
-  return ReactDOM.createPortal(getModal(), document.getElementById('root'));
-};
+  return getModal();
+  //return ReactDOM.createPortal(getModal(), document.getElementById('root'));
+};;
 
 export default Modal;

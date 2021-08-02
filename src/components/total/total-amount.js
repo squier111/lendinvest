@@ -19,7 +19,7 @@ const TotalAmount = () => {
     <div className="total-amount">
       <span>
         Total amount avaliable for investments
-        <b>&#163;{numberWithCommas(total)}</b>
+        <b> &#163;{numberWithCommas(total)}</b>
       </span>
     </div>
   );

@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  &.MuiCard-root {
+    background: none;
+    box-shadow: none;
+  }
   .loans-item {
     background: #fff;
     border: 1px solid rgba(0, 0, 0, 0.3);
