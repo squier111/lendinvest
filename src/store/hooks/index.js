@@ -12,7 +12,9 @@ import {  useReducer } from "react";
   // TODO replace foreach to the loop
 
   const  dispatchWithMiddlewares = (action) => {
-    middlewaresArray.forEach((middleware)=>{middleware(action)})
+    middlewaresArray.forEach((middleware) => {
+      middleware(action, state);
+    });
     // @ts-ignore
     dispatch(action);
   };

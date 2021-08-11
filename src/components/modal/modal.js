@@ -107,8 +107,8 @@ const Modal = () => {
     );
   };
 
-  return getModal();
-  //return ReactDOM.createPortal(getModal(), document.getElementById('root'));
+  // return getModal();
+  return ReactDOM.createPortal(getModal(), document.getElementById('root'));
 };;
 
 export default Modal;
